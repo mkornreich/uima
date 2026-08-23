@@ -1,0 +1,14 @@
+# Java / Maven
+java-uima/target/
+
+# Python
+python-client/.venv/
+__pycache__/
+*.pyc
+
+# Generated CAS interchange files
+shared/
+
+# Local editor / tooling settings
+.claude/
+

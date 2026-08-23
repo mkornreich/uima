@@ -1,0 +1,4 @@
+Apache UIMA turns unstructured text into structured data.
+Contact Dr. Ada Lovelace at ada.lovelace@example.com or call 415-555-0132 before 2026-09-01.
+The pilot project has a budget of $25,000 and the report lives at https://example.com/uima-report.
+Our team in London was thrilled and delighted with the excellent results. However, the rushed timeline felt stressful and disappointing.

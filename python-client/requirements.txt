@@ -1,0 +1,3 @@
+# dkpro-cassis: a pure-Python reader/writer for the UIMA CAS (XMI + TypeSystem).
+# This is how a Python program "speaks UIMA" without a JVM.
+dkpro-cassis>=0.10

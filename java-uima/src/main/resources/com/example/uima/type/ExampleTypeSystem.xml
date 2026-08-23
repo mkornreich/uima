@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  A UIMA Type System = the schema for everything a pipeline can put into a CAS.
+  Each <typeDescription> defines a new annotation type; features are its columns.
+  This exact file is shared with the Python side so both languages agree on the schema.
+-->
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>ExampleTypeSystem</name>
+  <description>Types for the Apache UIMA cross-language demo.</description>
+  <version>1.0</version>
+  <vendor>example</vendor>
+
+  <types>
+    <typeDescription>
+      <name>com.example.uima.type.Token</name>
+      <description>A single word/punctuation token.</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>pos</name>
+          <description>Coarse part-of-speech tag (WORD, NUM, PROPN, PUNCT).</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.example.uima.type.Sentence</name>
+      <description>A sentence span.</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.example.uima.type.Entity</name>
+      <description>A detected entity (email, phone, date, money, url, keyword...).</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>category</name>
+          <description>Entity category label.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>normalized</name>
+          <description>Normalized/canonical form of the entity.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>source</name>
+          <description>Which component created this annotation ("java" or "python").</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.example.uima.type.Sentiment</name>
+      <description>Sentiment computed over a sentence span (added by the Python client).</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>polarity</name>
+          <description>positive / negative / neutral.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>score</name>
+          <description>Signed sentiment score in [-1, 1].</description>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>source</name>
+          <description>Which component created this annotation.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>
